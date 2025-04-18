@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creative Accordions</title>
+  <link href="./output.css" rel="stylesheet">
+  <style>
+    .accordion-body {
+      max-height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    
+    .open .accordion-body {
+      max-height: 200px; 
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+    
+    .open .accordion-arrow {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body class="flex flex-col items-center px-4 py-10 font-sans">
+
+  <!-- Variant 1: Gradient Glow -->
+  <div class="w-full max-w-xl mb-5 rounded-lg overflow-hidden shadow-md transition-all duration-300">
+    <div class="flex justify-between items-center px-5 py-4 bg-gradient-to-r from-[#fbc77b] to-[#ffe7a3] text-[#5c3b00] font-bold text-lg cursor-pointer accordion-header">
+      Gradient Glow Accordion
+      <span class="transition-transform accordion-arrow">▼</span>
+    </div>
+    <div class="overflow-hidden transition-all duration-500 px-5 text-[#5c3b00] bg-[#fffdf6] accordion-body">
+      This accordion uses a warm gradient background and soft glow on expand.
+    </div>
+  </div>
+
+  <!-- Variant 2: Glass Frosted -->
+  <div class="w-full max-w-xl mb-5 rounded-lg overflow-hidden shadow-md transition-all duration-300 bg-[rgba(255,230,170,0.25)] border border-[rgba(255,230,170,0.4)] backdrop-blur-sm">
+    <div class="flex justify-between items-center px-5 py-4 text-[#6a4b1c] font-bold text-lg cursor-pointer accordion-header">
+      Glass Frosted Accordion
+      <span class="transition-transform accordion-arrow">▼</span>
+    </div>
+    <div class="overflow-hidden transition-all duration-500 px-5 text-[#5c3b00] bg-[#fffdf6] accordion-body">
+      This one mimics a glassmorphism look with blurred backdrop and translucent layers.
+    </div>
+  </div>
+
+  <!-- Variant 3: Shadow Flip -->
+  <div class="w-full max-w-xl mb-5 rounded-lg overflow-hidden shadow-[0_6px_20px_rgba(0,0,0,0.2)] transition-all duration-300">
+    <div class="flex justify-between items-center px-5 py-4 bg-[#f3a94f] text-white font-bold text-lg cursor-pointer accordion-header">
+      Shadow Flip Accordion
+      <span class="transition-transform accordion-arrow">▼</span>
+    </div>
+    <div class="overflow-hidden transition-all duration-500 px-5 text-[#5c3b00] bg-[#fffdf6] accordion-body">
+      A strong warm tone with scale and shadow effect on open.
+    </div>
+  </div>
+
+  <!-- Variant 4: Border Glow -->
+  <div class="w-full max-w-xl mb-5 rounded-lg overflow-hidden border-2 border-[#f3a94f] transition-all duration-300">
+    <div class="flex justify-between items-center px-5 py-4 bg-white text-[#f3a94f] font-bold text-lg cursor-pointer hover:shadow-[0_0_10px_#f3a94f] transition-shadow accordion-header">
+      Border Glow Accordion
+      <span class="transition-transform accordion-arrow">▼</span>
+    </div>
+    <div class="overflow-hidden transition-all duration-500 px-5 text-[#5c3b00] bg-[#fffdf6] accordion-body">
+      Minimal outline style with glow when hovered.
+    </div>
+  </div>
+
+  <!-- Variant 5: Rounded Pill -->
+  <div class="w-full max-w-xl mb-5 rounded-lg overflow-hidden shadow-md transition-all duration-300">
+    <div class="flex justify-between items-center px-7 py-3 bg-[#f3a94f] text-white font-bold text-lg cursor-pointer rounded-full accordion-header">
+      Rounded Pill Accordion
+      <span class="transition-transform accordion-arrow">▼</span>
+    </div>
+    <div class="overflow-hidden transition-all duration-500 px-5 text-[#5c3b00] bg-[#fffdf6] rounded-b-full accordion-body">
+      Full-rounded pill shaped accordion for a modern soft design.
+    </div>
+  </div>
+
+  <script>
+  document.querySelectorAll(".accordion-header").forEach(header => {
+    header.addEventListener("click", () => {
+      const parent = header.parentElement;
+      const body = parent.querySelector(".accordion-body")
+      parent.classList.toggle("open");
+    });
+  });
+  </script>
+  
+</body>
+</html>
